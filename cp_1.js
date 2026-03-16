@@ -40,6 +40,7 @@ const container = document.getElementById("feedback-display");
 
 form.addEventListener("submit", function(event) {
     event.preventDefault(); // Always prevent default submission
+    event.stopPropagation(); // Prevent submit from bubbling to any background handlers
 
     // 1. Clear previous error messages
     clearErrors();
@@ -123,3 +124,20 @@ function clearErrors() {
     inputElements.forEach((el) => el.classList.remove("input-error"));
 }
 
+// 1. Get the form container element
+const formContainer = document.querySelector('.form-container');
+
+formContainer.addEventListener('click', function(event) {
+  // 3. Stop the event from propagating to the parent "background" div
+  event.stopPropagation();
+  console.log('Form area clicked, but not the background.');
+});
+
+const submitButton = document.getElementById('submitButton');
+
+submitButton.addEventListener('click', function(event) {
+    event.stopPropagation();
+    // Your specific submit logic here
+    console.log('Submit button clicked!');
+    
+});
