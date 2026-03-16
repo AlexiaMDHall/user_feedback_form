@@ -1,0 +1,68 @@
+body {
+    background-color: lavender;
+    font-family: american typewriter, serif;
+}
+form {
+    background-color: white;
+    width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    border: 2px solid lavender;
+    text-align: center;
+}
+h1 {  text-align: center;}
+form { text-align: left;}
+p{text-align: center;}
+label.solid { 
+    border-style: solid;
+    border-width: 1px;
+    border-color: lavender;
+    padding: 5px;
+ }
+
+input, textarea {
+    border: 1px solid lavender;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-error {
+    border-color: #d93025;
+    outline: 2px solid rgba(217, 48, 37, 0.3);
+}
+
+.error {
+    color: #d93025;
+    font-size: 0.9rem;
+    margin: 2px 0 8px;
+    min-height: 1.2em;
+}
+
+button {
+    border: 1px solid lavender;
+    background-color: rgb(100, 100, 181);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#feedback-display {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.feedback-entry {
+    background: white;
+    border: 1px solid lavender;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
