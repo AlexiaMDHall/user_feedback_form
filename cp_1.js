@@ -36,6 +36,7 @@ attachTooltip(document.getElementById('name'), 'Enter your full name.');
 attachTooltip(document.getElementById('email'), 'Enter a valid email address.');
 
 const form = document.getElementById("feedbackForm");
+const container = document.getElementById("feedback-display");
 
 form.addEventListener("submit", function(event) {
     event.preventDefault(); // Always prevent default submission
@@ -101,18 +102,24 @@ form.addEventListener("submit", function(event) {
     }
 });
 
+form.addEventListener("focusin", (event) => {
+  const target = event.target;
+  if (target.matches("input, textarea")) {
+    // e.g., show tooltip/clear error for this field
+  }
+});
+
+form.addEventListener("focusout", (event) => {
+  const target = event.target;
+  if (target.matches("input, textarea")) {
+    // e.g., validate field on blur
+  }
+});
+
 function clearErrors() {
     const errorElements = document.querySelectorAll(".error");
     errorElements.forEach((el) => (el.textContent = ""));
     const inputElements = document.querySelectorAll(".input-error");
     inputElements.forEach((el) => el.classList.remove("input-error"));
 }
-
-
-
-
-    // 3. Append to container
-    displayContainer.appendChild(newFeedback);
-
-
 
