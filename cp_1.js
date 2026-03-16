@@ -91,9 +91,6 @@ function clearErrors() {
     inputElements.forEach((el) => el.classList.remove("input-error"));
 }
 
-function appendFeedback(feedbackText) {
-    // 1. Get the container
-    const displayContainer = document.getElementById("feedback-display");
 
     // 2. Create the new feedback element
     const newFeedback = document.createElement("div");
