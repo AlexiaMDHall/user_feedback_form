@@ -81,6 +81,23 @@ form.addEventListener("submit", function(event) {
 
         // Show a popup summary of missing fields
         alert("Please fill in the following required fields: " + missingFields.join(", ") + ".");
+    } else {
+        // Append valid feedback to the display
+        const feedbackEntry = document.createElement("div");
+        feedbackEntry.className = "feedback-entry";
+        feedbackEntry.innerHTML = `
+            <strong>Name:</strong> ${nameInput.value.trim()}<br>
+            <strong>Email:</strong> ${emailInput.value.trim()}<br>
+            <strong>Feedback:</strong> ${feedbackInput.value.trim()}
+        `;
+        container.appendChild(feedbackEntry);
+
+        // Clear the form
+        form.reset();
+
+        // Reset character count
+        charCount.textContent = "0";
+        charCount.style.color = "black";
     }
 });
 
@@ -92,14 +109,7 @@ function clearErrors() {
 }
 
 
-    // 2. Create the new feedback element
-    const newFeedback = document.createElement("div");
-    newFeedback.className = "feedback-entry"; // For CSS styling
-    newFeedback.textContent = feedbackText; // Set text securely
 
-    // 3. Append to the container
-    displayContainer.appendChild(newFeedback);
-}
 
     // 3. Append to container
     displayContainer.appendChild(newFeedback);
